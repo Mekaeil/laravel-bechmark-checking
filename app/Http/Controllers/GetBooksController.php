@@ -10,14 +10,14 @@ use Database\Factories\UserFactory;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
-final class BooksController extends Controller
+final class GetBooksController extends Controller
 {
     public function __invoke(): JsonResponse
     {
-        Book::factory(1000)->create();
+        $books = Book::paginate(100);
 
         return response()->json([
-            'message' => '1000 books has been created!'
+            'books' => $books
         ]);
     }
 }

@@ -7,9 +7,6 @@ namespace Database\Factories;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Book>
- */
 final class BookFactory extends Factory
 {
     /**
@@ -20,7 +17,7 @@ final class BookFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => User::factory(1)->id,
+            'user_id' => User::count() ? $this->faker->numberBetween(1,  User::count()) : User::factory(),
             'uuid' => $this->faker->uuid,
             'title' => $this->faker->title,
             'description' => $this->faker->text,
