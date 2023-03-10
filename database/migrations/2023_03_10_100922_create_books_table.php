@@ -13,16 +13,9 @@ return new class extends Migration
         Schema::create('books', static function (Blueprint $table) {
             $table->id();
             $table->uuid();
-            $table->unsignedBigInteger('user_id');
             $table->string('title');
             $table->text('description');
             $table->timestamps();
-
-            $table->foreign('user_id')
-                ->references('id')
-                ->on('users')
-                ->cascadeOnUpdate()
-                ->cascadeOnDelete();
         });
     }
 

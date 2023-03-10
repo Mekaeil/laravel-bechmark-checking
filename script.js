@@ -9,7 +9,7 @@ export const options = {
 /// POSTING TO CREATE 1000 Records (users) IN DB
 export default function () {
 
-    for (let id = 1; id <= 100; id++) {
+    for (let i = 1; i <= 10; i++) {
 
         /// SAMPLE API WITHOUT Eloquent / pure php
         // http.get('http://127.0.0.1:8000/api/sample');

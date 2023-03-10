@@ -17,7 +17,6 @@ final class BookFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => User::count() ? $this->faker->numberBetween(1,  User::count()) : User::factory(),
             'uuid' => $this->faker->uuid,
             'title' => $this->faker->title,
             'description' => $this->faker->text,

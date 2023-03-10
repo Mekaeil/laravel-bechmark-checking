@@ -14,7 +14,7 @@ final class BooksController extends Controller
 {
     public function __invoke(): JsonResponse
     {
-        Book::factory(1000)->create();
+        Book::factory(100)->create();
 
         return response()->json([
             'message' => '1000 books has been created!'
